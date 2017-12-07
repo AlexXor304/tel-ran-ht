@@ -34,7 +34,6 @@ public class Main {
 
     }
 
-
     private static void writeFile(String s, String name) throws IOException {
 
         FileWriter fileWriter = new FileWriter("/users/asx/Documents/files/file" + name + ".txt", false);
