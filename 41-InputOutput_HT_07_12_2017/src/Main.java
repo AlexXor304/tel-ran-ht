@@ -29,7 +29,7 @@ public class Main {
                 }
             }
         });
-        thread.run();
+        thread.start();
 
 
     }
