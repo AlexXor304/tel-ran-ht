@@ -28,13 +28,12 @@ public class Main {
 
 class FileThread extends Thread {
 
+    private static final AtomicInteger integer = new AtomicInteger(0);
     private String text;
 
     public FileThread(String text) {
         this.text = text;
     }
-
-    private static final AtomicInteger integer = new AtomicInteger(0);
 
     @Override
     public void run() {
