@@ -1,18 +1,22 @@
+import java.io.BufferedReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Scanner;
+import java.io.InputStreamReader;
 import java.util.concurrent.atomic.AtomicInteger;
 
 
 public class Main {
 
     public static void main(String[] args) {
-
-        Scanner scanner = new Scanner(System.in);
-        String s;
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        String s = "";
 
         while (true) {
-            s = scanner.nextLine();
+            try {
+                s = bufferedReader.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             if (s.equals("-1")) break;
             if (!s.equals("")) {
                 new FileThread(s).start();
@@ -24,7 +28,7 @@ public class Main {
 
 class FileThread extends Thread {
 
-    String text;
+    private String text;
 
     public FileThread(String text) {
         this.text = text;
@@ -61,6 +65,5 @@ class FileThread extends Thread {
         }
 
     }
-
 
 }
